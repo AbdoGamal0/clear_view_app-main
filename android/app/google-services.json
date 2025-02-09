@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "834815629768",
+    "project_id": "clear-view-2ec24",
+    "storage_bucket": "clear-view-2ec24.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:834815629768:android:23c9dfb76d82a5335608fd",
+        "android_client_info": {
+          "package_name": "com.company.clear"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_Z8PM_c2Pk4gMlm7Aawlk6EoXxeDB5Mw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:834815629768:android:712f3d3a9c23413d5608fd",
+        "android_client_info": {
+          "package_name": "com.company.clear_view"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_Z8PM_c2Pk4gMlm7Aawlk6EoXxeDB5Mw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
