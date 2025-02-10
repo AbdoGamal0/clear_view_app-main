@@ -1,24 +1,17 @@
 import 'package:flutter/material.dart';
 
-import '../../../ui/rive_app/navigation/main page.dart';
-import '../chat/presentation/chatbot_onboarding/onboarding_chatbot.dart';
-import '../detectimage/detect_disease_page.dart';
-import '../find_doctor/ListOfDoctor.dart';
-import '../vision_test/onboarding_vision_test/onboarding_vision_test.dart';
 
-// import '../../../detectimage/themeofdetectimage.dart';
-// import '../../../find_doctor/ListOfDoctor.dart';
+import '../../../freature/presentation/chat/presentation/chatbot.dart';
+import '../../../freature/presentation/detectimage/detect_disease_page.dart';
+import '../../../freature/presentation/find_doctor/ListOfDoctor.dart';
+import '../../../freature/presentation/vision_test/vision_test.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-  static String routeName = '/home_screen';
-
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFDFDFD), // لون الصفحة بالكامل
-      body: SingleChildScrollView(
-        // لجعل الصفحة قابلة للتمرير
+      backgroundColor: Color(0xFFFDFDFD), // لون الصفحة بالكامل
+      body: SingleChildScrollView(  // لجعل الصفحة قابلة للتمرير
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -27,7 +20,7 @@ class HomeScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // النصوص على اليسار
-                  const Column(
+                  Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
@@ -49,7 +42,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const Spacer(),
+                  Spacer(),
                   // الصورة في أعلى اليمين
                   Stack(
                     alignment: Alignment.center,
@@ -65,12 +58,12 @@ class HomeScreen extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) =>  DetectDiseasesPage(),
+                              builder: (context) => Chatbot(), // الصفحة الجديدة
                             ),
                           );
                         },
                         child: Image.asset(
-                          'assets/images/images2/img_image.png',
+                          'assets/images/img_image.png',
                           width: 110,
                           height: 100,
                           fit: BoxFit.cover,
@@ -80,30 +73,30 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: 16),
               // المستطيل مع النصوص والصورة
               Stack(
                 clipBehavior: Clip.none,
                 children: [
                   Container(
                     width: double.infinity,
-                    padding: const EdgeInsets.all(16),
+                    padding: EdgeInsets.all(16),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF90B4CE),
+                      color: Color(0xFF90B4CE),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
+                        Text(
                           'Know your disease is available',
                           style: TextStyle(
                             fontSize: 14,
                             color: Colors.white,
                           ),
                         ),
-                        const SizedBox(height: 8),
-                        const Text(
+                        SizedBox(height: 8),
+                        Text(
                           'Get free\nconsultation for\nnew users',
                           style: TextStyle(
                             fontFamily: 'RalewayRomanRegular',
@@ -112,22 +105,20 @@ class HomeScreen extends StatelessWidget {
                             color: Colors.white,
                           ),
                         ),
-                        const SizedBox(height: 16),
+                        SizedBox(height: 16),
                         GestureDetector(
                           onTap: () {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) =>
-                                    const DetectDiseasesResultPage(),
+                                builder: (context) => DetectDiseasesPage(),
                               ),
                             );
                           },
                           child: Container(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 24, vertical: 12),
+                            padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                             decoration: BoxDecoration(
-                              gradient: const LinearGradient(
+                              gradient: LinearGradient(
                                 colors: [
                                   Color(0xFF3DA9FC),
                                   Color(0xFF8175D8),
@@ -137,7 +128,7 @@ class HomeScreen extends StatelessWidget {
                               ),
                               borderRadius: BorderRadius.circular(12),
                             ),
-                            child: const Text(
+                            child: Text(
                               'Find a doctor',
                               style: TextStyle(
                                 fontSize: 16,
@@ -153,16 +144,16 @@ class HomeScreen extends StatelessWidget {
                     right: -80,
                     top: -50,
                     child: Image.asset(
-                      'assets/images/images2/img_smiling_asian_d.png',
+                      'assets/images/img_smiling_asian_d.png',
                       width: 250,
                       height: 250,
                     ),
                   ),
                 ],
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: 16),
               // النص "Our Services"
-              const Align(
+              Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   'Our Services',
@@ -173,50 +164,68 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: 16),
               // صف الأيقونات داخل مربعات
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   IconButtonWithText(
-                    imagePath: 'assets/images/images2/img_vector.png',
+                    imagePath: 'assets/images/img_vector.png',
                     text: 'Detect diseases',
-                    backgroundColor: const Color(0xFFDFEFFC),
+                    backgroundColor: Color(0xFFDFEFFC),
                     onTap: () {
-                      Navigator.pushNamed(context, DetectDiseasePage.routeName);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DetectDiseasePage(),
+                        ),
+                      );
                     },
                   ),
                   IconButtonWithText(
-                    imagePath: 'assets/images/images2/img_vector_28x32.png',
+                    imagePath: 'assets/images/img_vector_28x32.png',
                     text: 'Find doctor',
-                    backgroundColor: const Color(0xFFFDF3F3),
+                    backgroundColor: Color(0xFFFDF3F3),
                     onTap: () {
-                      Navigator.pushNamed(
-                          context, DoctorsListingPage.routeName);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DoctorsListingPage(),
+                        ),
+                      );
                     },
                   ),
                   IconButtonWithText(
-                    imagePath: 'assets/images/images2/img_image.png',
+                    imagePath: 'assets/images/img_image.png',
                     text: 'Chatbot',
-                    backgroundColor: const Color(0xFFF5EDC1),
+                    backgroundColor: Color(0xFFF5EDC1),
                     onTap: () {
-                      Navigator.pushNamed(context, ChatbotOnboarding.routeName);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Chatbot(),
+                        ),
+                      );
                     },
                   ),
                   IconButtonWithText(
-                    imagePath: 'assets/images/images2/img_vector_32x32.png',
+                    imagePath: 'assets/images/img_vector_32x32.png',
                     text: 'Vision test',
-                    backgroundColor: const Color(0xFFD0F6D8),
+                    backgroundColor: Color(0xFFD0F6D8),
                     onTap: () {
-                      Navigator.pushNamed(
-                          context, OnboardingVisionTest.routeName);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => VisionTest(),
+                        ),
+                      );
                     },
                   ),
                 ],
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: 16),
               // كلمة "Appointments"
-              const Align(
+              Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   'Appointments',
@@ -227,10 +236,10 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: 16),
               // مستطيل يحتوي على تفاصيل الموعد
-              const AppointmentCard(),
-              const AppointmentCard(), // تكرار للمستطيل
+              AppointmentCard(),
+              AppointmentCard(),  // تكرار للمستطيل
             ],
           ),
         ),
@@ -246,8 +255,7 @@ class IconButtonWithText extends StatelessWidget {
   final Color backgroundColor;
   final VoidCallback onTap;
 
-  const IconButtonWithText({
-    super.key,
+  IconButtonWithText({
     required this.imagePath,
     required this.text,
     required this.backgroundColor,
@@ -273,10 +281,10 @@ class IconButtonWithText extends StatelessWidget {
               width: 32,
               height: 32,
             ),
-            const SizedBox(height: 8),
+            SizedBox(height: 8),
             Text(
               text,
-              style: const TextStyle(
+              style: TextStyle(
                 color: Colors.black, // تغيير اللون إلى الأسود
                 fontSize: 12,
                 fontWeight: FontWeight.bold, // جعل النص بالخط العريض
@@ -288,25 +296,20 @@ class IconButtonWithText extends StatelessWidget {
       ),
     );
   }
-}
-
-class AppointmentCard extends StatelessWidget {
-  const AppointmentCard({super.key});
-
+}class AppointmentCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(16),
-      margin: const EdgeInsets.symmetric(vertical: 8),
+      padding: EdgeInsets.all(16),
+      margin: EdgeInsets.symmetric(vertical: 8),
       decoration: BoxDecoration(
         color: Colors.white, // لون الخلفية
         borderRadius: BorderRadius.circular(12), // حواف دائرية
         boxShadow: [
           BoxShadow(
-            // ignore: deprecated_member_use
             color: Colors.grey.withOpacity(0.1), // ظل خفيف
             blurRadius: 5,
-            offset: const Offset(0, 3),
+            offset: Offset(0, 3),
           ),
         ],
       ),
@@ -314,7 +317,7 @@ class AppointmentCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // النصوص العلوية
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column(
@@ -349,12 +352,12 @@ class AppointmentCard extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 8),
+          SizedBox(height: 8),
           Divider(
             color: Colors.grey.shade300, // فاصل بلون رمادي فاتح
             thickness: 1,
           ),
-          const SizedBox(height: 8),
+          SizedBox(height: 8),
           // بيانات الطبيب
           Row(
             children: [
@@ -362,15 +365,15 @@ class AppointmentCard extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(25), // يجعل الصورة دائرية
                 child: Image.asset(
-                  'assets/images/images2/img_user.png', // استبدل بالصورة المطلوبة
+                  'assets/images/img_user.png', // استبدل بالصورة المطلوبة
                   width: 40,
                   height: 40,
                   fit: BoxFit.cover,
                 ),
               ),
-              const SizedBox(width: 12),
+              SizedBox(width: 12),
               // اسم الطبيب
-              const Text(
+              Text(
                 'Dr. Indah Kusumaningrum',
                 style: TextStyle(
                   fontSize: 14,
@@ -386,14 +389,12 @@ class AppointmentCard extends StatelessWidget {
   }
 }
 
-class DetectDiseasesResultPage extends StatelessWidget {
-  const DetectDiseasesResultPage({super.key});
-
+class DetectDiseasesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Detect Diseases')),
-      body: const Center(child: Text('Detect Diseases Page')),
+      appBar: AppBar(title: Text('Detect Diseases')),
+      body: Center(child: Text('Detect Diseases Page')),
     );
   }
 }

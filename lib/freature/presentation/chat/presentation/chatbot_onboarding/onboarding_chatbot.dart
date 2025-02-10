@@ -1,7 +1,7 @@
-import 'package:clear_view/core/utils/config/constants.dart';
-import 'package:clear_view/freature/presentation/auth/presentation/widgets/custom_rounded_button.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../core/utils/config/constants.dart';
+import '../../../auth/presentation/widgets/custom_rounded_button.dart';
 import '../chatbot.dart';
 
 class ChatbotOnboarding extends StatelessWidget {

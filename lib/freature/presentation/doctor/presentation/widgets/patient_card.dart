@@ -1,6 +1,6 @@
-import 'package:clear_view/core/models/patient.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../core/models/patient.dart';
 import '../../../../../core/utils/config/constants.dart';
 
 class PatientCard extends StatelessWidget {

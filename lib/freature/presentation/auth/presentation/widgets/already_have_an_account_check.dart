@@ -1,5 +1,6 @@
-import 'package:clear_view/core/utils/config/constants.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../../core/utils/config/constants.dart';
 
 class AlreadyHaveAnAccountCheck extends StatelessWidget {
   const AlreadyHaveAnAccountCheck({super.key, required this.login, this.press});

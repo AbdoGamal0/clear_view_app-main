@@ -1,11 +1,12 @@
-import 'package:clear_view/freature/presentation/auth/logic/cubit/auth_cubit.dart';
-import 'package:clear_view/helpers/show_snake_bar.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 import '../../../../core/utils/config/constants.dart';
+import '../../../../helpers/show_snake_bar.dart';
 import '../../home/home_screen.dart';
+import '../logic/cubit/auth_cubit.dart';
 import 'register.dart';
 import 'reset_password.dart';
 import 'widgets/already_have_an_account_check.dart';

@@ -1,7 +1,7 @@
-import 'package:clear_view/core/utils/config/shared_widgets/build_background.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/utils/config/constants.dart';
+import '../../../../core/utils/config/shared_widgets/build_background.dart';
 import '../../auth/presentation/widgets/custom_rounded_button.dart';
 
 class OnboardingVisionTest1 extends StatelessWidget {

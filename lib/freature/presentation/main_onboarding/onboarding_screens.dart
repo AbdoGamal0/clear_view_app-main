@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:clear_view/core/models/onboard.dart';
-import 'package:clear_view/helpers/onboarding_manager.dart';
 import 'package:flutter/material.dart';
 
+import '../../../core/models/onboard.dart';
+import '../../../helpers/onboarding_manager.dart';
 import '../auth/presentation/login.dart';
 import 'widgets/onboarding_screen1.dart';
 
@@ -74,6 +74,7 @@ class _OnBoardingState extends State<OnBoarding> {
         itemBuilder: (context, index) => OnboardingWidget(
           onboard: onboardData[index],
           controller: controller,
+          totalPages: onboardData.length, // 🟢 إصلاح الخطأ بإضافة totalPages
         ),
       ),
     );
