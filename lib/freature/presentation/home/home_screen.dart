@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../ui/rive_app/navigation/main page.dart';
+import '../chat/presentation/chatbot.dart';
 import '../chat/presentation/chatbot_onboarding/onboarding_chatbot.dart';
 import '../detectimage/detect_disease_page.dart';
 import '../find_doctor/ListOfDoctor.dart';
@@ -65,7 +66,7 @@ class HomeScreen extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) =>  DetectDiseasesPage(),
+                              builder: (context) =>  Chatbot(),
                             ),
                           );
                         },
